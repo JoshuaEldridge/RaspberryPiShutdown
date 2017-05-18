@@ -1,0 +1,13 @@
+# shutdown-button service file, start a daemon on startup
+# file: /etc/systemd/system/shutdown-button.service
+# note: the service exec command must include the full path
+# to both the executable and the script
+[Unit]
+Description=Start shutdown-button daemon
+
+[Service]
+RemainAfterExit=true
+ExecStart=/usr/bin/python /usr/local/bin/shutdown-button.py
+
+[Install]
+WantedBy=multi-user.target
